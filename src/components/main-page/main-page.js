@@ -4,12 +4,12 @@ import { useRequestGetTodos, useDebonce } from '../../hooks';
 import { getFilteredListTodos } from '../../utils';
 import styles from './main-page.module.css';
 
-export const MainPage = () => {
+export const MainPage = ({ todos, setTodos, isLoading, errorGetting }) => {
 	const [searchValue, setSearchValue] = useState('');
 	const [isSortFlag, setIsSortFlag] = useState(false);
 	const { debouncedValue } = useDebonce(searchValue, 300);
 
-	const { todos, setTodos, isLoading, errorGetting } = useRequestGetTodos();
+	// const { todos, setTodos, isLoading, errorGetting } = useRequestGetTodos();
 
 	const newListTodos = getFilteredListTodos(todos, isSortFlag, debouncedValue);
 
