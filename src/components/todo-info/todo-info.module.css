@@ -1,0 +1,9 @@
+.todo-info {
+	border-radius: 35px;
+	color: #eee;
+	background-color: #242846;
+}
+
+.todo-info_title {
+	text-align: center;
+}
