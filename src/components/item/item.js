@@ -4,12 +4,12 @@ import { useRequestDeleteTodos, useRequestUpdateTodos } from '../../hooks';
 import styles from './item.module.css';
 
 export const Item = ({ id, title, completed, setTodos }) => {
-	const [editId, setEditId] = useState('');
-	const [editInputValue, setEditInputValue] = useState(title);
-	const { isDeletingFlag, errorDeleting, onDelete } = useRequestDeleteTodos(setTodos);
-	const { isUpdatingFlag, errorUpdating, onUpdating } = useRequestUpdateTodos(setTodos);
+	// const [editId, setEditId] = useState('');
+	// const [editInputValue, setEditInputValue] = useState(title);
+	// const { isDeletingFlag, errorDeleting, onDelete } = useRequestDeleteTodos(setTodos);
+	// const { isUpdatingFlag, errorUpdating, onUpdating } = useRequestUpdateTodos(setTodos);
 
-	const errorItem = errorUpdating || errorDeleting;
+	// const errorItem = errorUpdating || errorDeleting;
 
 	return (
 		<li className={styles.item + ' ' + (completed && styles['item-completed'])}>

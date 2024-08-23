@@ -28,6 +28,21 @@
 	background-color: #243a46;
 }
 
+.todo-info_deleted {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #3df191;
+}
+
+.todo-info_error {
+	position: absolute;
+	top: 13px;
+	left: 30px;
+	color: #cd4242;
+}
+
 .item_button-wrapp {
 	position: absolute;
 	top: 13px;

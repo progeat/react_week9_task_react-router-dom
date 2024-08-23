@@ -1,41 +1,6 @@
 {
   "todos": [
     {
-      "title": "affjhkj",
-      "completed": false,
-      "id": 1
-    },
-    {
-      "title": "gdsgdsfg",
-      "completed": false,
-      "id": 2
-    },
-    {
-      "title": "dsfdsfgdsf",
-      "completed": false,
-      "id": 3
-    },
-    {
-      "title": "sdfgsdf",
-      "completed": false,
-      "id": 4
-    },
-    {
-      "title": "wa4323",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "title": "dsfq34yeag",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "title": "23tergf",
-      "completed": false,
-      "id": 7
-    },
-    {
       "title": "Что-то внятное написать и прям много. Для того чтобы текст выходил за рамки блока для проверки",
       "completed": true,
       "id": 10

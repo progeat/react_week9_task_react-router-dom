@@ -7,7 +7,7 @@ export const useRequestDeleteTodos = (setTodos) => {
 
 	const todosEndpoint = config.baseURL + 'todos/';
 
-	const onDelete = (id) => {
+	const onDelete = (id, setIsDeletedTodo) => {
 		setIsDeleting(true);
 
 		fetch(`${todosEndpoint}/${id}`, {
@@ -23,6 +23,7 @@ export const useRequestDeleteTodos = (setTodos) => {
 			.then((deletedTodo) => {
 				console.log('The task has been deleted', deletedTodo);
 				setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+				setIsDeletedTodo(true);
 				setErrorDeleting('');
 			})
 			.catch((error) => {
