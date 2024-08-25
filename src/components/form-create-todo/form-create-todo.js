@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import { useRequestCreateTodo } from '../../hooks/use-request-create-todo';
 import styles from './form-create-todo.module.css';
 
-export const FormCreateTodo = ({ setTodos }) => {
+export const FormCreateTodo = ({ isCreatingFlag, errorCreating, requestCreateTodo }) => {
 	const [newTodo, setNewTodo] = useState('');
 	const [messageError, setMessageError] = useState('');
-
-	const { isCreatingFlag, errorCreating, requestCreateTodo } =
-		useRequestCreateTodo(setTodos);
 
 	const onSubmit = (event) => {
 		event.preventDefault();

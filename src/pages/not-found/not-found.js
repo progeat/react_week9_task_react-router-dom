@@ -6,7 +6,7 @@ export const NotFound = () => {
 
 	return (
 		<div className={styles['not-found-page']}>
-			<h3 className={styles['not-found-page_title']}>Todo info</h3>
+			<h3 className={styles['not-found-page_title']}>ERROR 404</h3>
 			<button
 				className={styles['not-found-page_btn-main']}
 				onClick={() => navigate('/')}
@@ -14,9 +14,7 @@ export const NotFound = () => {
 				❮ Main
 			</button>
 			<div className={styles['not-found-page_inner']}>
-				<p className={styles['not-found-page_text']}>
-					The TODO page was not found
-				</p>
+				<p className={styles['not-found-page_text']}>The page was not found</p>
 			</div>
 		</div>
 	);
