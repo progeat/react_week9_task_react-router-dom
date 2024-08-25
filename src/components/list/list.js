@@ -12,7 +12,7 @@ export const List = ({ isLoading, todos, setTodos }) => {
 					id={id}
 					title={title}
 					completed={completed}
-					setTodos={setTodos}
+					// setTodos={setTodos}
 				/>
 			))}
 		</ul>

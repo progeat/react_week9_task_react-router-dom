@@ -1,0 +1,45 @@
+.not-found-page {
+	position: relative;
+	padding: 30px;
+	min-height: 350px;
+	border-radius: 35px;
+	color: #eee;
+	background-color: #242846;
+}
+
+.not-found-page_title {
+	text-align: center;
+	margin: 0;
+	color: #42cd83;
+}
+
+.not-found-page_btn-main {
+	margin-bottom: 10px;
+	border: 0;
+	color: #a1a1a1;
+	background-color: inherit;
+	cursor: pointer;
+}
+
+.not-found-page_btn-main:hover {
+	color: #42cd83;
+}
+
+.not-found-page_inner {
+	position: relative;
+	display: block;
+	width: 100%;
+	min-height: 248px;
+	border-radius: 15px;
+	padding: 29px 20px 20px 20px;
+	color: #eee;
+	background-color: #2b3055;
+}
+
+.not-found-page_text {
+	position: absolute;
+	top: 43%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #cd4242;
+}

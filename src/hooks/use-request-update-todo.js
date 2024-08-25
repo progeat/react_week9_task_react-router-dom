@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import config from '../config.json';
 
-export const useRequestUpdateTodos = (setTodos) => {
+export const useRequestUpdateTodo = () => {
 	const [isUpdatingFlag, setIsUpdatingFlag] = useState(false);
 	const [errorUpdating, setErrorUpdating] = useState('');
 
-	const todosEndpoint = config.baseURL + 'todos/';
-
-	const onUpdating = (id, title, completed) => {
+	const onUpdating = (id, title, completed, setTodo) => {
 		setIsUpdatingFlag(true);
 
-		fetch(`${todosEndpoint}/${id}`, {
+		const todoEndpoint = config.baseURL + 'todos/' + id;
+
+		fetch(todoEndpoint, {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json;charset=utf-8' },
 			body: JSON.stringify({ title, completed }),
@@ -24,11 +24,7 @@ export const useRequestUpdateTodos = (setTodos) => {
 			})
 			.then((updatedTodo) => {
 				console.log('The task has been updated', updatedTodo);
-				setTodos((prevTodos) =>
-					prevTodos.map((todo) =>
-						todo.id === updatedTodo.id ? updatedTodo : todo,
-					),
-				);
+				setTodo(updatedTodo);
 				setErrorUpdating('');
 			})
 			.catch((error) => {

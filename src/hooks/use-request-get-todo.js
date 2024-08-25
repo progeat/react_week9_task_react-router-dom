@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import config from '../config.json';
+import { useNavigate } from 'react-router-dom';
 
 export const useRequestGetTodo = (id) => {
-	const [todo, setTodo] = useState([]);
+	const [todo, setTodo] = useState({});
 	const [isTodoLoaded, setIsTodoLoaded] = useState(false);
-	const [errorGetting, setErrorGetting] = useState('');
+
+	const navigate = useNavigate();
 
 	const todoEndpoint = config.baseURL + 'todos/' + id;
 
@@ -14,26 +16,22 @@ export const useRequestGetTodo = (id) => {
 		fetch(todoEndpoint)
 			.then((responseData) => {
 				if (!responseData.ok) {
-					throw Error('could not fetch the data for that resourse');
+					throw Error('There is no such TODO');
 				}
 
 				return responseData.json();
 			})
-			.then((todoData) => {
-				setTodo(todoData);
-				setErrorGetting('');
-			})
+			.then((todoData) => setTodo(todoData))
 			.catch((error) => {
 				console.error(error);
-				setErrorGetting(error.message);
+				navigate('/not-found');
 			})
 			.finally(() => setIsTodoLoaded(false));
-	}, [todoEndpoint, id]);
+	}, [todoEndpoint, id, navigate]);
 
 	return {
-		// setTodo,
 		todo,
+		setTodo,
 		isTodoLoaded,
-		errorGetting,
 	};
 };

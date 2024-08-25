@@ -1,0 +1,10 @@
+.link-back {
+	color: #a1a1a1;
+	background-color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.link-back:hover {
+	color: #42cd83;
+}

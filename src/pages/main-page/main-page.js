@@ -1,15 +1,14 @@
 import { useState } from 'react';
-import { HeaderApp, List } from '../index';
-import { useRequestGetTodos, useDebonce } from '../../hooks';
+import { HeaderApp, List } from '../../components';
+import { useDebonce, useRequestGetTodos } from '../../hooks';
 import { getFilteredListTodos } from '../../utils';
 import styles from './main-page.module.css';
 
-export const MainPage = ({ todos, setTodos, isLoading, errorGetting }) => {
+export const MainPage = () => {
 	const [searchValue, setSearchValue] = useState('');
 	const [isSortFlag, setIsSortFlag] = useState(false);
+	const { todos, setTodos, isLoading, errorGetting } = useRequestGetTodos();
 	const { debouncedValue } = useDebonce(searchValue, 300);
-
-	// const { todos, setTodos, isLoading, errorGetting } = useRequestGetTodos();
 
 	const newListTodos = getFilteredListTodos(todos, isSortFlag, debouncedValue);
 

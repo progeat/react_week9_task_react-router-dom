@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import config from '../config.json';
 
-export const useRequestDeleteTodos = (setTodos) => {
+export const useRequestDeleteTodo = () => {
 	const [isDeletingFlag, setIsDeleting] = useState(false);
 	const [errorDeleting, setErrorDeleting] = useState('');
 
-	const todosEndpoint = config.baseURL + 'todos/';
-
 	const onDelete = (id, setIsDeletedTodo) => {
+		const todoEndpoint = config.baseURL + 'todos/' + id;
 		setIsDeleting(true);
 
-		fetch(`${todosEndpoint}/${id}`, {
+		fetch(todoEndpoint, {
 			method: 'DELETE',
 		})
 			.then((responseData) => {
@@ -22,7 +21,6 @@ export const useRequestDeleteTodos = (setTodos) => {
 			})
 			.then((deletedTodo) => {
 				console.log('The task has been deleted', deletedTodo);
-				setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
 				setIsDeletedTodo(true);
 				setErrorDeleting('');
 			})
